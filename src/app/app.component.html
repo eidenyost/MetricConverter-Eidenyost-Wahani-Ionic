@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Konverter Metrik</h1>
+
+  <div class="input-group">
+    <label for="inputValue">Masukkan Nilai</label>
+    <input id="inputValue" type="number" [(ngModel)]="inputValue">
+  </div>
+
+  <div class="input-group">
+    <label for="fromUnit">Dari</label>
+    <select id="fromUnit" [(ngModel)]="fromUnit">
+      <option value="mm">Millimeter (mm)</option>
+      <option value="cm">Centimeter (cm)</option>
+      <option value="m">Meter (m)</option>
+      <option value="km">Kilometer (km)</option>
+    </select>
+  </div>
+
+  <div class="input-group">
+    <label for="toUnit">Ke</label>
+    <select id="toUnit" [(ngModel)]="toUnit">
+      <option value="mm">Millimeter (mm)</option>
+      <option value="cm">Centimeter (cm)</option>
+      <option value="m">Meter (m)</option>
+      <option value="km">Kilometer (km)</option>
+    </select>
+  </div>
+
+  <button class="convert-button" (click)="convert()">Konversi</button>
+
+  <div class="result" *ngIf="result !== null">
+    <h2>Hasil Konversi:</h2>
+    <p>{{ result }} {{ toUnit }}</p>
+  </div>
+</div>
